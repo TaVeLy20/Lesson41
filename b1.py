@@ -1,29 +1,29 @@
 from tkinter import *
+from tkinter import messagebox
 
 root=Tk()
 root.title("Form")
 root.geometry("400x400")
+root.configure(bg="orange")
 
 frm = Frame(master=root, height=300, width=300, bg="yellow")
 
-t1= Text(frm, text="Enter in your name:")
-t2= Text(frm, text="Enter in your age:")
-t3= Text(frm, text="Enter in your country:")
-t4= Text(frm, text="Enter in your gender:")
-t5= Text(frm, text="Enter in your username:")
-t6= Text(frm, text="Enter in your password:")
+t1= Label(frm, text="Enter in your name:")
+t2= Label(frm, text="Enter in your age:")
+t3= Label(frm, text="Enter in your country:")
+t4= Label(frm, text="Enter in your gender:")
+t5= Label(frm, text="Enter in your username:")
+t6= Label(frm, text="Enter in your password:")
 
 e1= Entry(frm)
 e2= Entry(frm)
 e3= Entry(frm)
 e4= Entry(frm)
 e5= Entry(frm)
-e6= Entry(show="*")
+e6= Entry(frm, show="*")
 
 def btn():
-    textbox.insert(END, "form submitted")
-
-textbox = Text()
+    messagebox.showinfo("Notification", "Form Submitted")
 
 button = Button(text="Submit", command=btn, bg="red")
 
@@ -44,6 +44,5 @@ t6.pack()
 e6.pack()
 
 button.pack()
-textbox.pack()
 
 root.mainloop()
